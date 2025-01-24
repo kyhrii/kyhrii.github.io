@@ -53,10 +53,10 @@ a {
         rgba(210,0,0,1) 75%, 
         rgb(224, 0, 0) 100%
     );
-    background-size: 200%; */
-    /* -webkit-background-clip: text; 'background-clip' does NOT work on chromium based browsers */
-    /* -webkit-text-fill-color: transparent; */
-    /* animation: background-pan 3s linear infinite; */
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: background-pan 3s linear infinite; */
     font-family: 'Space Mono', monospace;
     font-weight: 600;
     font-size: 1.8rem;
@@ -67,7 +67,7 @@ a {
     text-decoration-thickness: 2px;
 }
 
-@keyframes background-pan {
+/* @keyframes background-pan {
     from {
         background-position: 0% center;
     }
@@ -75,7 +75,7 @@ a {
     to {
         background-position: -200% center;
     }
-}
+} */
 
 /* .navbar > .navigation {
     display: flex;
@@ -122,6 +122,7 @@ a {
     align-items: center;
     flex-direction: column;
     min-height: calc(100vh - var(--navbar-height));
+    margin: -1em auto auto;
     user-select: none;
 }
 
@@ -167,10 +168,6 @@ a {
     /* box-shadow: 0 calc(var(--navbar-height) * -1) 0px rgb(224, 0, 0) inset; */
     text-decoration: underline red;
     text-decoration-thickness: 2px;
-}
-
-.about {
-    margin: -1em auto auto;
 }
 
 /* couldve just done .about > h1:first-child    no */

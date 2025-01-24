@@ -125,7 +125,10 @@ a {
 
 .card-wrapper {
     display: flex;
-    margin: auto;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    user-select: none;
     font-family: 'Montserrat';
     font-weight: 600;
     /* display: grid;
@@ -150,6 +153,7 @@ a {
     margin: 0.5em auto auto;
     overflow: hidden;
     inset: 2px;
+    top: 10rem;
 }
 
 .card > .content {
