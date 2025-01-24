@@ -12,7 +12,6 @@
 *, html, body { /* but why tho */
     margin: 0;
     padding: 0;
-    font-family: var(--font-family);
 }
 
 body {
@@ -89,6 +88,7 @@ a {
     justify-content: space-between;
     align-items: center;
     margin-right: 1.5rem;
+    font-family: var(--font-family);
 }
 
 .navigation > ul {
@@ -123,10 +123,11 @@ a {
     text-decoration-thickness: 2px;
 }
 
-
 .card-wrapper {
     display: flex;
     margin: auto;
+    font-family: 'Montserrat';
+    font-weight: 600;
     /* display: grid;
     gap: 1em;
     width: calc(64vw - 1em);
@@ -169,6 +170,11 @@ a {
     align-items: center;
 }
 
+.card > .content > .start > .brand {
+    margin: auto 0.6em auto;
+    font-size: larger;
+}
+
 .card > .content > .end {
     display: flex;
     flex-direction: row;
@@ -187,7 +193,7 @@ a {
 
 .card::before {
     background: radial-gradient(
-        var(--font-color),transparent,transparent
+        red,transparent,transparent
     );
     content: "";
     position: absolute;
@@ -212,6 +218,7 @@ a {
 .card:hover {
     text-decoration: underline red;
     text-decoration-thickness: 2px;
+    transition: 0s;
 }
 
 .card:hover::before {
@@ -262,23 +269,23 @@ a {
     z-index: 0;
 } */
 
-.card-content-wrapper {
+/* .card-content-wrapper {
     background-color: rgb(30, 30, 30);
     border-radius: inherit;
     display: grid;
     inset: 1px;
     padding: 1em 1em 1em 1em;
     position: absolute;
-}
+} */
 
-.card-content {
+/* .card-content {
     color: #ffffff;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 1em 1em 1em 1em;
-}
+} */
 
 /* .card.youtube .card-content {
     color: #ff0000;
@@ -300,10 +307,10 @@ a {
     color: #ffffff;
 } */
 
-.card.icon:before {
+/* .card.icon:before {
     color: rgba(255, 255, 255, 0.25);
     font-size: 6em;
     opacity: 0.4;
     place-self: center;
     transition: transform 250ms, opacity 250ms;
-}
+} */
