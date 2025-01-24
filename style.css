@@ -1,0 +1,190 @@
+:root {
+    /* variables */
+    --navbar-height: 65px;
+    --navbar-color: hsl(0, 0%, 10%);
+    --background-color: hsl(0, 0%, 16%);
+    --font-color: hsl(0, 0%, 100%);
+    --font-family: 'Space Mono', monospace;
+}
+
+*, html, body { /* but why tho */
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--font-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--font-color);
+}
+
+.navbar {
+    display: flex;
+    width: 100%;
+    height: var(--navbar-height);
+    background-color: var(--navbar-color);
+}
+
+.navbar > .brand {
+    display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: auto;
+    margin-left: 1.5rem;
+    justify-content: flex-start;
+    flex-direction: row;
+    user-select: none;
+    font-size: x-large;
+    font-weight: 700;
+    font-family: var(--font-family);
+}
+
+.navbar > .brand > a {
+    /* background: linear-gradient(
+        to right, 
+        rgb(224, 0, 0) 0%, 
+        rgba(210,0,0,1) 25%, 
+        rgba(255,0,0,1) 50%,
+        rgba(210,0,0,1) 75%, 
+        rgb(224, 0, 0) 100%
+    );
+    background-size: 200%; */
+    /* -webkit-background-clip: text; 'background-clip' does NOT work on chromium based browsers */
+    /* -webkit-text-fill-color: transparent; */
+    /* animation: background-pan 3s linear infinite; */
+    font-family: 'Space Mono', monospace;
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+
+.navbar > .brand > a:hover {
+    text-decoration: underline red;
+    text-decoration-thickness: 2px;
+}
+
+@keyframes background-pan {
+    from {
+        background-position: 0% center;
+    }
+
+    to {
+        background-position: -200% center;
+    }
+}
+
+/* .navbar > .navigation {
+    display: flex;
+    margin-top: 0;
+    margin-right: 1.5rem;
+    margin-bottom: 0;
+    margin-left: auto;
+    justify-content: flex-end;
+    flex-direction: row;
+    user-select: none;
+}
+
+.navbar > .navigation > div:not(:first-child) {
+    margin-left: 0;
+}
+
+
+
+.navbar > .navigation > div {
+    display: flex;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    transition: 300ms
+}
+
+.navbar > .navigation > div:hover {
+    box-shadow: 0 -65px 0px rgb(224, 0, 0) inset;
+}
+
+.navbar > .navigation > div > a {
+    margin-top: auto;
+    margin-bottom: auto;
+    text-shadow: 3px 3px 5px #000000;
+} */
+
+.about {
+    font-family: 'Montserrat', sans-serif;
+    font-size: x-large;
+    text-shadow: 3px 3px 5px #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: calc(100vh - var(--navbar-height));
+    user-select: none;
+}
+
+.navbar > .brand > a > img {
+    max-height: 1.5rem;
+    margin: auto;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 1.5rem;
+}
+
+.navigation > ul {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    transition: 500ms;
+    z-index: 2;
+}
+
+.navigation > ul > li {
+    list-style-type: none;
+}
+
+.navigation > ul > li > a {
+    color: var(--text-color-0);
+    text-decoration: none;
+    display: block;
+    padding: 23.4px 1rem; /* calc(var(--navbar-height) / 2.75) 1.25rem; 23.636363636363637 */
+    font-size: 18px;
+    line-height: 1;
+    /* transition: 300ms; */
+    user-select: none;
+}
+
+.navigation > ul > li > a:hover {
+    /* box-shadow: 0 calc(var(--navbar-height) * -1) 0px rgb(224, 0, 0) inset; */
+    text-decoration: underline red;
+    text-decoration-thickness: 2px;
+}
+
+/* couldve just done .about > h1:first-child    no */
+.about > p:first-child {
+    font-size: 2.5rem;
+}
+
+.about > p > #drake {
+    color: rgb(224, 0, 0);
+    font-weight: 600;
+    font-family: var(--font-family);
+}
+
+.about > p > #drake:hover {
+    text-decoration: underline white;
+    text-decoration-thickness: 2;
+}
+
+.about > p > span {
+    cursor: pointer;
+}

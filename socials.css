@@ -1,0 +1,309 @@
+:root {
+    /* variables */
+    --navbar-height: 65px;
+    --navbar-color: hsl(0, 0%, 10%);
+    --background-color: hsl(0, 0%, 16%);
+    --font-color: hsl(0, 0%, 100%);
+    --border: hsl(0, 0%, 5%);
+    --font-family: 'Space Mono', monospace;
+    --card-color: hsl(0, 0%, 10%)
+}
+
+*, html, body { /* but why tho */
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--font-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--font-color);
+}
+
+.navbar {
+    display: flex;
+    width: 100%;
+    height: var(--navbar-height);
+    background-color: var(--navbar-color);
+}
+
+.navbar > .brand {
+    display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: auto;
+    margin-left: 1.5rem;
+    justify-content: flex-start;
+    flex-direction: row;
+    user-select: none;
+    font-size: x-large;
+    font-weight: 700;
+    font-family: var(--font-family);
+}
+
+.navbar > .brand > a {
+    /* background: linear-gradient(
+        to right, 
+        rgb(224, 0, 0) 0%, 
+        rgba(210,0,0,1) 25%, 
+        rgba(255,0,0,1) 50%,
+        rgba(210,0,0,1) 75%, 
+        rgb(224, 0, 0) 100%
+    ); */
+    /* background-size: 200%; */
+    /* -webkit-background-clip: text; 'background-clip' does NOT work on chromium based browsers */
+    /* -webkit-text-fill-color: transparent;
+    animation: background-pan 3s linear infinite; */
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+
+.navbar > .brand > a:hover {
+    text-decoration: underline red;
+    text-decoration-thickness: 2px;
+}
+
+@keyframes background-pan {
+    from {
+        background-position: 0% center;
+    }
+
+    to {
+        background-position: -200% center;
+    }
+}
+
+.navbar > .brand > a > img {
+    max-height: 1.5rem;
+    margin: auto;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 1.5rem;
+}
+
+.navigation > ul {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    transition: 500ms;
+    z-index: 2;
+}
+
+.navigation > ul > li {
+    list-style-type: none;
+}
+
+.navigation > ul > li > a {
+    color: var(--text-color-0);
+    text-decoration: none;
+    display: block;
+    padding: 23.4px 1rem; /* calc(var(--navbar-height) / 2.75) 1.25rem; 23.636363636363637 */
+    font-size: 18px;
+    line-height: 1;
+    /* transition: 300ms; */
+    user-select: none;
+}
+
+.navigation > ul > li > a:hover {
+    /* box-shadow: 0 calc(var(--navbar-height) * -1) 0px rgb(224, 0, 0) inset; */
+    text-decoration: underline red;
+    text-decoration-thickness: 2px;
+}
+
+
+.card-wrapper {
+    display: flex;
+    margin: auto;
+    /* display: grid;
+    gap: 1em;
+    width: calc(64vw - 1em);
+    place-self: center;
+    top: 420px; */
+}
+
+.card {
+    min-width: 30rem;
+    min-height: 4.5rem;
+    background: var(--card-color);
+    /* border-radius: 0.75em; */
+    cursor: pointer;
+    display: flex;
+	position: relative;
+    transition: 1000ms;
+    /* background-color: rgba(255, 255, 255, 0.02); */
+    /* border: 1px solid hsl(0, 0%, 20%); */
+    border-radius: 10px;
+    margin: 0.5em auto auto;
+    overflow: hidden;
+    inset: 2px;
+}
+
+.card > .content {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+    z-index: 3;
+}
+
+.card > .content > .start {
+    display: flex;
+    flex-direction: row;
+    margin-right: auto;
+    align-items: center;
+}
+
+.card > .content > .end {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    align-items: center;
+}
+
+.card > .content > .start > img {
+    max-width: 2.5rem;
+}
+
+.card > .content > .start > p {
+    margin-left: 10px;
+    font-size: 1rem;
+}
+
+.card::before {
+    background: radial-gradient(
+        var(--font-color),transparent,transparent
+    );
+    content: "";
+    position: absolute;
+    top: var(--y);
+    left: var(--x);
+    width: 600px;
+    height: 200px;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+    transition: 0.5s, top 0s, left 0s;
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    border-radius: 8px;
+    background-color: hsl(0, 0%, 10%);
+    opacity: 0.94;
+}
+
+.card:hover {
+    text-decoration: underline red;
+    text-decoration-thickness: 2px;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+
+
+/* .card::before {
+    --transition-duration: 2500ms;
+	border-radius: 20px;
+	background: linear-gradient(
+		90deg,
+		rgba(26, 26, 26, 1) 25%,    
+		#5865F2 75%
+	);
+	position: absolute;
+	background-position: 0% 0%;
+	background-size: 500% 500%;
+	content: "";
+	height: 100%;
+	width: 100%;
+	transition: background-position var(--transition-duration) ease-in-out, transform var(--transition-duration) ease-in-out;
+    z-index: -1;
+} */
+
+/* .card:hover:before { 
+	background-position: 100% 100%;
+} */
+
+/* .card:hover:before {
+    opacity: 1;
+}
+
+.card:before {
+    background: linear-gradient(
+        45deg,
+        transparent 5%,
+        rgb(163, 186, 192) 50%,
+        transparent 99%
+    );
+    border-radius: inherit;
+    content: "";
+    inset: 0px;
+    opacity: 0;
+    position: absolute;
+    transition: opacity 400ms;
+    z-index: 0;
+} */
+
+.card-content-wrapper {
+    background-color: rgb(30, 30, 30);
+    border-radius: inherit;
+    display: grid;
+    inset: 1px;
+    padding: 1em 1em 1em 1em;
+    position: absolute;
+}
+
+.card-content {
+    color: #ffffff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1em 1em 1em 1em;
+}
+
+/* .card.youtube .card-content {
+    color: #ff0000;
+}
+
+.card.twitch .card-content {
+    color: #a970ff;
+}
+
+.card.discord .card-content {
+    color: #5865f2;
+}
+
+.card.twitter .card-content {
+    color: #1d9bf0;
+}
+
+.card.github .card-content {
+    color: #ffffff;
+} */
+
+.card.icon:before {
+    color: rgba(255, 255, 255, 0.25);
+    font-size: 6em;
+    opacity: 0.4;
+    place-self: center;
+    transition: transform 250ms, opacity 250ms;
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/73026bf420.js" crossorigin="anonymous"></script>
+    <meta name="darkreader-lock">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="socials.css">
+    <!-- fonts -->
+    <!-- poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <!-- space mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+    <title>socials</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="brand">
+                <a href="/index.html">o((>ω< ))o<img src="\" alt=""></a>
+            </div>
+            <div class="navigation">
+                <!-- <div><a href="/">about</a></div>
+                <div><a href="/">socials</a></div>
+                <div><a href="/">projects</a></div> -->
+                <ul>
+                    <li><a href="/">about</a></li>
+                    <li><a href="/socials.html">socials</a></li>
+                    <li><a href="/projects.html">projects</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="card-wrapper">
+            <div class="card">
+                <div class="content">
+                    <div class="start">
+                        <img src="svg/discord-mark-white.svg" alt="Discord">
+                        <p class="brand">discord</p>
+                    </div>
+                    <div class="end">
+                        <p class="username">kyhri</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-wrapper">
+            <div class="card">
+                <div class="content">
+                    <div class="start">
+                        <img src="svg/youtube-app-white-icon.svg" alt="YouTube">
+                        <p class="brand">youtube</p>
+                    </div>
+                    <div class="end">
+                        <p class="username">kyhri.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            let cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.onmousemove = function(e){
+                    let x = e.pageX - card.offsetLeft;
+                    let y = e.pageY - card.offsetTop;
+
+                    card.style.setProperty('--x', x + 'px');
+                    card.style.setProperty('--y', y + 'px');
+                }
+            })
+        </script>
+    </main>
+    <!-- <div class="card-wrapper">
+        <div class="card youtube" id="card-openurl" data-url="https://www.youtube.com/@kyhri.">
+            <div class="card-content-wrapper">
+                <div class="card-content">
+                    <i class="card-icon fa-regular fa-brands fa-youtube fa-3x"></i>
+                </div>
+            </div>
+        </div>
+        <div class="card twitch" id="card-openurl" data-url="https://www.twitch.tv/kyhri_">
+            <div class="card-content-wrapper">
+                <div class="card-content">
+                    <i class="card-icon fa-regular fa-brands fa-twitch fa-3x"></i>
+                </div>
+            </div>
+        </div>
+        <div class="card discord" id="card-copytext" data-text="kyhri"> 
+            <div class="card-content-wrapper">
+                <div class="card-content">
+                    <i class="card-icon fa-regular fa-brands fa-discord fa-3x"></i>
+                </div>
+            </div>
+        </div>
+        <div class="card twitter" id="card-openurl" data-url="https://www.twitter.com/kyhri_">
+            <div class="card-content-wrapper">
+                <div class="card-content">
+                    <i class="card-icon fa-regular fa-brands fa-twitter fa-3x"></i>
+                </div>
+            </div>
+        </div>
+        <div class="card github" id="card-openurl" data-url="https://github.com/kyhrii">
+            <div class="card-content-wrapper">
+                <div class="card-content">
+                    <i class="card-icon fa-regular fa-brands fa-github fa-3x"></i>
+                </div>
+            </div>
+        </div>
+        <div class="card tiktok" id="card-openurl" data-url="https://www.tiktok.com/@kyhrimc">
+            <div class="card-content-wrapper">
+                <div class="card-content">
+                    <i class="card-icon fa-regular fa-brands fa-tiktok fa-3x"></i>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</body>
+</html>
