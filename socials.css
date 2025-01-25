@@ -212,7 +212,7 @@ a {
     margin: 0.5em auto auto;
     overflow: hidden;
     inset: 2px;
-    top: 10rem;
+    top: 8vh;
 }
 
 .card > .content {
